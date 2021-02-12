@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop; #데이터베이스 접속 주소
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      # 개발 서버 택1 (create/create-drop/update)
+      # 테스트 서버 택1 (update/validate)
+      # 배포 서버 택 1 (validate/none)
+      ddl-auto: create-drop #서버를 켰다겄을때 디비를 create하고 drop한다
+    properties:
+      hibernate:
+        # show_sql: true # 주석처리, print 형식이기 때문!
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
